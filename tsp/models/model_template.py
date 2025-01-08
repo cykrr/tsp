@@ -17,7 +17,7 @@ class Model:
          head_dim = 64,
          city_count = 50,
                  
-         batch_size = 512,
+         batch_size = 128,
          train_split = 0.5,
          nb_samples = 20000,
          epochs = 10):

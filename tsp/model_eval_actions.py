@@ -1,3 +1,4 @@
+import torch
 class ModelEvalActions():
   def __init__(self, model):
     self.model=model
@@ -18,7 +19,7 @@ class ModelEvalActions():
       vecSeqs.append(vecSeq)
       move2idx.append(mov2idx)
 
-    predictions = self.model(torch.tensor(vecSeqs), return_probabilities=True)
+    predictions = self.model(torch.tensor(vecSeqs, device=torch.device("cuda")), return_probabilities=True)
 
     for k in range(len(states)):
       state = states[k]
